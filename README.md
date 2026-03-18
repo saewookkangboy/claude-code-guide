@@ -14,4 +14,4 @@ Claude Code 70가지 파워 팁을 목차별로 정리한 가이드입니다.
 
 ## 라이선스
 
-© 2026 Manus AI. Based on works by ykdojo and Ado Kukic.
+© 2026 Manus AI & Based on works by ykdojo and Ado Kukic.
