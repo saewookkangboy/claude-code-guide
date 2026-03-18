@@ -185,4 +185,4 @@ Python과 Rust가 섞인 복잡한 문제를 해결해야 했습니다. Rust를 
 
 
 ---
-↑ [목차로 돌아가기](../../README.md#toc)
+↑ [목차로 돌아가기](https://github.com/saewookkangboy/claude-code-guide/blob/main/README.md#user-content-toc)

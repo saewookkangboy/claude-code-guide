@@ -54,4 +54,4 @@
 
 © 2025-2026 Based on works by ykdojo and Ado Kukic.
 
-↑ [목차로 돌아가기](../../README.md#toc)
+↑ [목차로 돌아가기](https://github.com/saewookkangboy/claude-code-guide/blob/main/README.md#user-content-toc)
