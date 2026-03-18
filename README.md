@@ -9,7 +9,7 @@
 
 2026년, 소프트웨어 개발의 패러다임은 근본적인 전환점을 넘어 일상이 되었습니다. 인공지능(AI)은 단순히 코드 조각을 자동 완성해주는 보조 도구를 넘어, 개발자의 파트너로서 전체 개발 라이프사이클에 깊숙이 관여하는 에이전트(Agent)로 자리 잡았습니다. 그 중심에 Claude Code가 있습니다.
 
-이 책은 단순한 기능 나열식 가이드를 넘어, Anthropic 해커톤 우승자 ykdojo의 생생한 경험과 검증된 워크플로우, 그리고 Anthropic DevRel Ado Kukic의 "Advent of Claude" 챌린지에서 공개된 70가지가 넘는 실전 팁과 전략을 완전히 집대성한 결정판 가이드입니다. **2026년 3월 기준** Claude Code CLI v2.1.76 이상, 기본 모델 Opus 4.6, 공식 문서(https://code.claude.com/docs)를 반영해 최신화했습니다.
+이 책은 단순한 기능 나열식 가이드를 넘어, Anthropic 해커톤 우승자 ykdojo의 생생한 경험과 검증된 워크플로우, 그리고 Anthropic DevRel Ado Kukic의 "Advent of Claude" 챌린지에서 공개된 70가지가 넘는 실전 팁과 전략을 완전히 집대성한 결정판 가이드입니다. **2026년 3월 기준** Claude Code CLI v2.1.76 이상, 기본 모델 Opus 4.6, 공식 문서(https://code.claude.com/docs) 를 반영해 최신화했습니다.
 
 **이 책의 특징:**
 - 70가지 이상의 완전한 팁: ykdojo의 43가지 팁과 Ado의 31가지 팁을 하나도 빠짐없이 상세하게 다룹니다.
@@ -68,4 +68,4 @@ claude-code-guide/
 
 ---
 
-© 2026 Manus AI & Based on works by ykdojo and Ado Kukic.
+© 2025-2026 Based on works by ykdojo and Ado Kukic.
