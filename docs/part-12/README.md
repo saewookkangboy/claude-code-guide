@@ -57,4 +57,4 @@ for await (const msg of query({
 
 
 ---
-↑ [목차로 돌아가기](../../#toc)
+↑ [목차로 돌아가기](../../README.md#toc)

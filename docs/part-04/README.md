@@ -87,4 +87,4 @@ Breakdown: System Prompt, MCP Servers (supabase-mcp, playwright-mcp, firecrawl-m
 
 
 ---
-↑ [목차로 돌아가기](../../#toc)
+↑ [목차로 돌아가기](../../README.md#toc)

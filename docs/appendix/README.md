@@ -52,6 +52,6 @@
 
 이 책의 모든 내용은 **2026년 3월** 기준으로 보강되었으며, Claude Code는 지속적으로 업데이트됩니다. 최신 정보는 공식 문서(https://code.claude.com/docs)를 참조하세요.
 
-© 2026 Manus AI. Based on works by ykdojo and Ado Kukic.
+© 2025-2026 Based on works by ykdojo and Ado Kukic.
 
-↑ [목차로 돌아가기](../../#toc)
+↑ [목차로 돌아가기](../../README.md#toc)

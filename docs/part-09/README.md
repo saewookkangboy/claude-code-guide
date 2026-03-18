@@ -58,4 +58,4 @@ export GOOGLE_API_KEY=your_api_key
 
 
 ---
-↑ [목차로 돌아가기](../../#toc)
+↑ [목차로 돌아가기](../../README.md#toc)

@@ -108,4 +108,4 @@ echo "Review this PR" | claude -p --json
 
 
 ---
-↑ [목차로 돌아가기](../../#toc)
+↑ [목차로 돌아가기](../../README.md#toc)
