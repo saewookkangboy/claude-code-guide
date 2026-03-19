@@ -1,133 +1,78 @@
-# Claude Guide — 바이브 코딩 프롬프트 키트
+# Claude Code 완전 가이드: 70가지 파워 팁
 
-AI(Claude, Cursor 등)에게 일을 요청할 때 **어떤 말을 어떻게 쓰면 좋을지** 정리한 가이드와 템플릿 모음입니다.  
-코드를 직접 잘 다루지 않으셔도, **복사해서 고쳐 쓰기**만 하시면 되어서 부담 없이 활용하실 수 있습니다.
-
----
-
-## 이 저장소로 하실 수 있는 일
-
-- **프롬프트 템플릿 쓰기**  
-  기획, 기능 구현, UI·디자인, 리팩터링, 테스트, 문서화 등 **단계(Part)별로** 미리 만들어 둔 문장을 복사해, 괄호 부분만 수정해서 AI 채팅창에 붙여 넣으시면 됩니다.
-
-- **Cursor에서 자동 적용**  
-  이 저장소를 Cursor로 열어 두고 채팅하시면, **역할 / 상황 / 제약 / 출력** 구조를 AI가 알아서 해석하도록 설정되어 있습니다. 별도 설정 없이 같은 방식으로 요청하실 수 있습니다.
-
-- **팀과 방식 통일**  
-  팀원들이 같은 템플릿을 쓰면, “어떤 식으로 AI에게 요청해야 하지?” 하는 고민을 줄일 수 있고, 나온 결과도 비슷한 형태로 맞추기 쉽습니다.
+**기반 자료**: ykdojo (Anthropic 해커톤 우승자) & Ado Kukic (Anthropic DevRel)  
+**최종 업데이트**: 2026년 3월 (Claude Code v2.1.76+, Claude Opus 4.6 기준)
 
 ---
 
-## 사용 방법
+## 바이브 코딩 프롬프트 키트 (실전용)
 
-### 1. Cursor에서 이 저장소를 연 뒤 채팅하기
-
-저장소 폴더를 Cursor에서 연 상태로, 채팅창에 예를 들어 다음과 같이 적어 보세요.
-
-- `[기획·설계] 새 기능 스코프 정리해줘.`  
-- `[기능 구현] 로그인 폼 만들어줘.`  
-- `[UI·스타일] 이 화면 미니멀하게 바꿔줘.`
-
-앞에 **Part 이름**을 붙이면, 저장소에 들어 있는 규칙과 스킬이 자동으로 적용됩니다.
-
-### 2. 템플릿을 복사해서 쓰기
-
-**`prompts`** 폴더 안에 Part별 예시 문장이 들어 있습니다.  
-원하시는 Part 파일을 열어서 **코드 블록(회색 상자) 안 내용 전체**를 복사한 뒤, `[ ]` 안이나 하이픈(`-`) 아래 항목만 프로젝트에 맞게 바꿔서 채팅창에 붙여 넣으시면 됩니다.
-
-- 기획·설계 → `prompts/part1-planning.md`
-- 기능 구현 → `prompts/part2-implementation.md`
-- UI·스타일 → `prompts/part3-ui-style.md`
-- 리팩터링 → `prompts/part4-refactoring.md`
-- 테스트·디버깅 → `prompts/part5-test-debug.md`
-- 문서화 → `prompts/part6-documentation.md`
-- 빈 칸 채워 쓰기 → `prompts/template-blank.md`
-- 한 줄로 짧게 쓸 때 → `prompts/one-liner.md`
-
-### 3. 터미널에서 템플릿 내용 보기
-
-터미널을 쓰시는 분은 아래처럼 실행하시면 해당 Part의 템플릿 내용이 출력됩니다. 복사해서 쓰시면 됩니다.
-
-```bash
-./scripts/show-prompt.sh 1    # 기획·설계
-./scripts/show-prompt.sh 2    # 기능 구현
-./scripts/show-prompt.sh 3    # UI·스타일
-./scripts/show-prompt.sh 4    # 리팩터링
-./scripts/show-prompt.sh 5    # 테스트·디버깅
-./scripts/show-prompt.sh 6    # 문서화
-./scripts/show-prompt.sh blank # 빈 칸 템플릿
-./scripts/show-prompt.sh one  # 한 줄 프롬프트
-```
-
-숫자(1~6), `blank`, `one` 만 바꿔서 사용하시면 됩니다.
+이 저장소에는 **Part별 바이브 코딩** 실전용 키트가 포함되어 있습니다. AI(Claude, Cursor 등)에게 요청할 때 쓸 수 있는 **복사용 프롬프트 템플릿**, Cursor 규칙·스킬, 사용 방법이 정리되어 있습니다.  
+→ **상세 사용법·저장소 구조·역할별 활용:** [0.2-part-vibe-coding-prompt-guide.md](0.2-part-vibe-coding-prompt-guide.md) · 복사용 프롬프트는 **`prompts/`** 폴더에서 바로 쓰실 수 있습니다.
 
 ---
 
-## 저장소 구조
+## 서문: 개발의 새로운 시대, AI 에이전트와 함께하는 여정
+
+2026년, 소프트웨어 개발의 패러다임은 근본적인 전환점을 넘어 일상이 되었습니다. 인공지능(AI)은 단순히 코드 조각을 자동 완성해주는 보조 도구를 넘어, 개발자의 파트너로서 전체 개발 라이프사이클에 깊숙이 관여하는 에이전트(Agent)로 자리 잡았습니다. 그 중심에 Claude Code가 있습니다.
+
+이 책은 단순한 기능 나열식 가이드를 넘어, Anthropic 해커톤 우승자 ykdojo의 생생한 경험과 검증된 워크플로우, 그리고 Anthropic DevRel Ado Kukic의 "Advent of Claude" 챌린지에서 공개된 70가지가 넘는 실전 팁과 전략을 완전히 집대성한 결정판 가이드입니다. **2026년 3월 기준** Claude Code CLI v2.1.76 이상, 기본 모델 Opus 4.6, 공식 문서(https://code.claude.com/docs) 를 반영해 최신화했습니다.
+
+**이 책의 특징:**
+- 70가지 이상의 완전한 팁: ykdojo의 43가지 팁과 Ado의 31가지 팁을 하나도 빠짐없이 상세하게 다룹니다.
+- 구체적인 예시와 Cookbook: 각 팁마다 실제로 사용할 수 있는 명령어, 스크립트, 설정 파일을 제공합니다.
+- **폴더 트리 구조**: 각 Part가 `docs/` 하위 폴더로 구분되어 있어, 목차 클릭 시 해당 섹션으로 바로 이동합니다.
+
+---
+
+<a id="toc"></a>
+## 목차 (트리)
+
+아래 트리에서 **폴더/항목을 클릭**하면 해당 파트로 이동합니다.
 
 ```
-claude_guide/
-├── .cursor/
-│   ├── rules/
-│   │   └── vibe-coding-prompt-structure.mdc   # AI가 항상 참고하는 규칙 (역할/상황/제약/출력)
-│   └── skills/
-│       └── vibe-coding/
-│           └── SKILL.md                       # 바이브 코딩 적용 방법 안내
-├── docs/
-│   └── 0.2-part-vibe-coding-prompt-guide.md   # Part별 가이드 요약
-├── prompts/                                    # ← 여기서 복사해서 쓰시면 됩니다
-│   ├── part1-planning.md                       # 기획·설계용 예시
-│   ├── part2-implementation.md                 # 기능 구현용 예시
-│   ├── part3-ui-style.md                       # UI·스타일용 예시
-│   ├── part4-refactoring.md                    # 리팩터링용 예시
-│   ├── part5-test-debug.md                     # 테스트·디버깅용 예시
-│   ├── part6-documentation.md                  # 문서화용 예시
-│   ├── template-blank.md                       # 공통 빈 칸 템플릿
-│   └── one-liner.md                            # 한 줄 프롬프트 모음
-├── scripts/
-│   └── show-prompt.sh                          # Part 번호로 템플릿 내용 출력
-├── 0.2-part-vibe-coding-prompt-guide.md       # 전체 가이드 (상세 설명)
-└── README.md                                   # 이 문서
+claude-code-guide/
+├── README.md                    ← 현재 문서 (서문 + 목차)
+└── docs/
+    ├── part-00/  [README](docs/part-00/README.md)   프롬프트 엔지니어링 및 바이브 코딩 가이드
+    ├── part-01/  [README](docs/part-01/README.md)   에이전틱 개발자의 사고방식
+    ├── part-02/  [README](docs/part-02/README.md)   기초부터 탄탄하게 — 환경 설정과 필수 명령어
+    ├── part-03/  [README](docs/part-03/README.md)   생산성을 극대화하는 핵심 기술
+    ├── part-04/  [README](docs/part-04/README.md)   컨텍스트 관리의 예술
+    ├── part-05/  [README](docs/part-05/README.md)   Git과 GitHub 워크플로우 완전 정복
+    ├── part-06/  [README](docs/part-06/README.md)   고급 기능 — MCP, Hooks, Agents
+    ├── part-07/  [README](docs/part-07/README.md)   시스템 최적화와 자동화
+    ├── part-08/  [README](docs/part-08/README.md)   컨테이너와 샌드박스
+    ├── part-09/  [README](docs/part-09/README.md)   브라우저 통합과 웹 자동화
+    ├── part-10/  [README](docs/part-10/README.md)   실전 활용 사례
+    ├── part-11/  [README](docs/part-11/README.md)   고급 패턴과 철학
+    ├── part-12/  [README](docs/part-12/README.md)   고급 기능과 SDK
+    ├── part-13/  [README](docs/part-13/README.md)   학습 로드맵과 다음 단계
+    ├── closing/  [README](docs/closing/README.md)   맺음말: AI는 부조종사, 주인공은 당신
+    └── appendix/ [README](docs/appendix/README.md)  부록: 빠른 참조 가이드
 ```
 
-- **쓰실 때마다 보시면 되는 곳:** `prompts/` 폴더, 그리고 필요하면 `0.2-part-vibe-coding-prompt-guide.md`
-- **Cursor가 알아서 읽는 곳:** `.cursor/rules/`, `.cursor/skills/` (수정하지 않으셔도 됩니다)
-- **템플릿을 터미널로 보고 싶을 때:** `scripts/show-prompt.sh`
+### 빠른 링크
+
+| Part | 제목 | 링크 |
+|------|------|------|
+| Part 0 | 프롬프트 엔지니어링 및 바이브 코딩 가이드 | [docs/part-00/README.md](docs/part-00/README.md) |
+| Part 1 | 에이전틱 개발자의 사고방식 | [docs/part-01/README.md](docs/part-01/README.md) |
+| Part 2 | 기초부터 탄탄하게 | [docs/part-02/README.md](docs/part-02/README.md) |
+| Part 3 | 생산성을 극대화하는 핵심 기술 | [docs/part-03/README.md](docs/part-03/README.md) |
+| Part 4 | 컨텍스트 관리의 예술 | [docs/part-04/README.md](docs/part-04/README.md) |
+| Part 5 | Git과 GitHub 워크플로우 | [docs/part-05/README.md](docs/part-05/README.md) |
+| Part 6 | 고급 기능 — MCP, Hooks, Agents | [docs/part-06/README.md](docs/part-06/README.md) |
+| Part 7 | 시스템 최적화와 자동화 | [docs/part-07/README.md](docs/part-07/README.md) |
+| Part 8 | 컨테이너와 샌드박스 | [docs/part-08/README.md](docs/part-08/README.md) |
+| Part 9 | 브라우저 통합과 웹 자동화 | [docs/part-09/README.md](docs/part-09/README.md) |
+| Part 10 | 실전 활용 사례 | [docs/part-10/README.md](docs/part-10/README.md) |
+| Part 11 | 고급 패턴과 철학 | [docs/part-11/README.md](docs/part-11/README.md) |
+| Part 12 | 고급 기능과 SDK | [docs/part-12/README.md](docs/part-12/README.md) |
+| Part 13 | 학습 로드맵과 다음 단계 | [docs/part-13/README.md](docs/part-13/README.md) |
+| — | 맺음말 | [docs/closing/README.md](docs/closing/README.md) |
+| — | 부록: 빠른 참조 | [docs/appendix/README.md](docs/appendix/README.md) |
 
 ---
 
-## 역할별로 이렇게 활용해 보세요
-
-### 개발자 분들
-
-- **일상 작업:** 기능 하나 넣을 때, 리팩터링할 때, 테스트·버그 잡을 때 `prompts/` 에서 해당 Part 파일을 열어 블록을 복사해 쓰시면 됩니다.
-- **새 프로젝트에 적용:** 이 저장소를 그대로 복사하거나 서브모듈로 넣어 두시고, `.cursor/` 와 `prompts/`, `scripts/show-prompt.sh` 만 가져가시면 다른 프로젝트에서도 같은 방식으로 사용하실 수 있습니다.
-- **한 줄로 빠르게:** `prompts/one-liner.md` 또는 `./scripts/show-prompt.sh one` 으로 짧은 문장을 복사해 조금만 수정해서 쓰시면 됩니다.
-
-### 마케터·기획·비개발자 분들
-
-- **기획 단계:** “이런 기능을 넣고 싶은데, 필요한 화면/API가 뭔지 정리해줘” 같은 요청을 하고 싶으시면 `prompts/part1-planning.md` 의 예시를 복사해, 괄호 안만 바꿔서 AI에게 보내 보세요.
-- **문서·설명문:** README나 사용자용 안내 문구를 부탁할 때는 `prompts/part6-documentation.md` 예시를 참고하시면 됩니다.
-- **코드는 잘 모르겠을 때:** Part 이름(`[기획·설계]`, `[문서화]` 등)만 붙이고, “이거 해줘”라고만 적어도 AI가 구조에 맞춰 이해하도록 되어 있으니, 부담 갖지 않으셔도 됩니다.
-
-### PM(프로덕트 매니저) 분들
-
-- **스코프·우선순위:** “이 기능 범위와 필요한 작업 목록만 짧게 정리해줘”라고 하실 때 `part1-planning.md` 템플릿을 쓰시면, API/화면/플로우 관점으로 정리된 답을 받기 좋습니다.
-- **개발팀과 말 맞추기:** 팀에 이 저장소를 공유해 두시면, “역할/상황/제약/출력” 같은 표현으로 요청할 수 있어서, PM이 작성한 요청문을 개발자가 그대로 AI에 넣어서 구현 단계로 이어가기 쉽습니다.
-- **문서화·회의록:** 제품 설명이나 정리 문서를 부탁할 때는 `part6-documentation.md` 를 참고하시면 됩니다.
-
----
-
-## 정리
-
-- **복사해서 쓰는 것만** 기억하시면 됩니다. `prompts/` 폴더에서 고르시고, `[ ]` 와 항목만 수정해서 채팅창에 붙여 넣으세요.
-- Cursor를 쓰시면 이 저장소를 연 채로 채팅하는 것만으로도 규칙이 적용되니, **별도 설정은 필요 없습니다.**
-- 팀에서 함께 쓰시면 요청 방식이 통일되어, 결과도 더 일관되게 받으실 수 있습니다.
-
-궁금한 점이 있으시면 저장소 안의 `0.2-part-vibe-coding-prompt-guide.md` 에 조금 더 자세한 설명이 있으니 참고해 보시면 좋겠습니다. 도움이 되길 바랍니다.
-
----
-
-## 라이선스
-
-문서와 스크립트는 프로젝트 정책에 따릅니다.
+© 2025-2026 Based on works by ykdojo and Ado Kukic.
